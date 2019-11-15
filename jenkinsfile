@@ -5,4 +5,11 @@ node('UBUNTU') {
     stage('package') {
         sh 'mvn package'
     }
+    stage('archiveartifacts') {
+        archive 'gameoflife-web/target/*.war'
+    }
+    stage('archivetestresults') {
+        junit 'gameoflife-web/target/surefire-reports/*.xml'
+    }
+    
 }
