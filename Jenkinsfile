@@ -1,4 +1,4 @@
-node('UBUNTU') {
+node('ubuntu') {
     stage('GIT') {
         git 'https://github.com/shashi4c2/jenkinsbuildpractice.git'
     }
