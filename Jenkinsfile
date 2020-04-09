@@ -12,7 +12,7 @@ node('ubuntu') {
         junit 'gameoflife-web/target/surefire-reports/*.xml'
     }
     stage('deployment') {
-        sh 'docker image build -t gameoflife .'
+        sh 'docker image build -t gameoflife /home/jenkins/images/gameoflife'
         sh 'docker container run -d -p 8081:8080 gameoflife:1.0'
     }
 }
