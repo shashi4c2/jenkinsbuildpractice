@@ -13,6 +13,6 @@ node('ubuntu') {
     }
     stage('deployment') {
         sh 'docker image build -t gameoflife /home/jenkins/images/gameoflife'
-        sh 'docker container run -d -p 8081:8080 /home/jenkins/images/gameoflife/gameoflife:1.0'
+        sh 'docker container run -d -p 8081:8080 gameoflife'
     }
 }
